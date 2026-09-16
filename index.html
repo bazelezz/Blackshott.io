@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0d0e0c">
 <meta name="description" content="BLACKSHOT — пейнтбол в Астрахани. Крытая арена 3500 м², более 40 укрытий, дни рождения, игровые сценарии. Украинская, 3.">
-<title>BLACKSHOT — больше поля. Больше игры.</title>
+<title>BLACKSHOT — больше драйва. Больше игры.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
@@ -67,6 +67,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .header{position:sticky;top:0;z-index:30;height:84px;background:#0d0e0cee;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
 .header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .brand{display:flex;align-items:center;gap:11px}
+.brand-logo{height:80px;width:auto;object-fit:contain}
 .brand-mark{width:35px;height:39px;position:relative;background:var(--primary);clip-path:polygon(0 0,76% 0,100% 24%,83% 48%,100% 73%,76% 100%,0 100%)}
 .brand-mark::before,.brand-mark::after{content:"";position:absolute;left:10px;width:12px;height:6px;background:var(--bg)}
 .brand-mark::before{top:9px}.brand-mark::after{bottom:9px}
@@ -125,7 +126,13 @@ button,a{-webkit-tap-highlight-color:transparent}
 .map-bottom strong{font:500 38px/1 var(--head);color:var(--primary)}
 .map-bottom span{font-size:9px;color:var(--muted);max-width:175px;line-height:1.8}
 
-/* Scenarios (New) */
+/* Gallery (New) */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.gallery-item{position:relative;aspect-ratio:4/3;background:var(--panel);border:1px solid var(--line);overflow:hidden;border-radius:2px}
+.gallery-item img{width:100%;height:100%;object-fit:cover;opacity:0.85;transition:transform 0.5s ease, opacity 0.4s ease}
+.gallery-item:hover img{transform:scale(1.05);opacity:1}
+
+/* Scenarios */
 .scenarios{padding-top:0}
 .scenarios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:40px}
 .scenario-card{background:var(--panel);border-top:3px solid var(--accent);padding:25px}
@@ -183,7 +190,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .open-game p{font-size:11px;color:var(--muted);line-height:1.9;max-width:690px;margin-top:9px}
 .open-game .btn{flex-shrink:0}
 
-/* Rules (New) */
+/* Rules */
 .rules{padding-top:0}
 .rules-container{background:var(--panel);padding:40px;border-left:4px solid var(--accent)}
 .rules-container h2{font:500 36px var(--head);text-transform:uppercase;margin-bottom:10px;color:var(--primary)}
@@ -290,6 +297,7 @@ details p{font-size:12px;line-height:1.95;color:var(--muted);padding:0 25px 23px
 .hero-stat{padding-left:20px;gap:12px}.hero-stat strong{font-size:32px}
 .section{padding-block:74px}.section-head>p{max-width:280px;font-size:12px}
 .arena-layout{gap:32px}.arena-map{padding:22px}
+.gallery-grid{grid-template-columns:repeat(2,1fr);gap:15px}
 .scenarios-grid{grid-template-columns:1fr 1fr}
 .package{padding:27px}.package-price{font-size:49px}
 .equipment{grid-template-columns:1fr 1fr}
@@ -305,7 +313,9 @@ details p{font-size:12px;line-height:1.95;color:var(--muted);padding:0 25px 23px
 @media(max-width:600px){
 html{scroll-padding-top:88px}.container{width:calc(100% - 36px)}.section{padding-block:59px}
 .title{font-size:42px}.section-head{display:block;margin:21px 0 29px}.section-head>p{max-width:100%;margin-top:18px;font-size:12px}
-.eyebrow{font-size:8px;gap:9px}.brand{gap:8px}.brand-mark{width:27px;height:33px}
+.eyebrow{font-size:8px;gap:9px}.brand{gap:8px}
+.brand-logo{height:70px}
+.brand-mark{width:27px;height:33px}
 .brand-mark::before,.brand-mark::after{left:8px;width:9px;height:5px}.brand-name{font-size:23px}.brand-caption{font-size:6px}
 .header .btn{min-height:40px;padding-inline:12px;font-size:9px}.header .btn .icon{display:none}.menu-toggle{width:40px;height:40px}
 .hero-inner{padding-top:29px}.hero-top .eyebrow{font-size:8px;max-width:210px;line-height:1.7}.hero-top>span{font-size:8px}
@@ -316,6 +326,7 @@ html{scroll-padding-top:88px}.container{width:calc(100% - 36px)}.section{padding
 .hero-stats{gap:12px;padding:23px 0 28px}.hero-stat{display:block;padding-left:13px}.hero-stat strong{display:block;font-size:29px}.hero-stat span{display:block;font-size:8px;margin-top:8px}
 .ticker-inner{justify-content:flex-start;padding-block:12px;font-size:14px;gap:23px}
 .arena-layout{grid-template-columns:1fr;gap:30px}.arena-copy>p{font-size:12px}.arena-map{padding:24px}
+.gallery-grid{grid-template-columns:1fr;gap:12px}
 .scenarios-grid{grid-template-columns:1fr}
 .packages{grid-template-columns:1fr;gap:17px}.package{padding:27px}.package h3{font-size:37px}.package-price{font-size:52px}
 .equipment{gap:18px 12px}.equipment div{font-size:10px;gap:9px}
@@ -364,11 +375,18 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="#home" aria-label="BLACKSHOT — на главную">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <!-- Если картинка logo.png не загрузится, она скроется, и появится старый значок brand-mark -->
+      <img class="brand-logo" src="images/logo.png" alt="BLACKSHOT" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span class="brand-mark" style="display: none;" aria-hidden="true"></span>
       <span><span class="brand-name">BLACKSHOT</span><span class="brand-caption">Пейнтбол · Астрахань</span></span>
     </a>
     <nav class="nav" id="navigation" aria-label="Главная навигация">
-      <a href="#arena">Арена</a><a href="#prices">Тарифы</a><a href="#offers">Праздники</a><a href="#rules">Правила</a><a href="#contacts">Контакты</a>
+      <a href="#arena">Арена</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#prices">Тарифы</a>
+      <a href="#offers">Праздники</a>
+      <a href="#rules">Правила</a>
+      <a href="#contacts">Контакты</a>
     </nav>
     <div class="header-actions">
       <a class="header-phone" href="tel:+79275541212">+7 (927) 554-12-12<small>Обсудить игру</small></a>
@@ -387,7 +405,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
     </div>
 
     <div class="hero-content">
-      <h1 id="hero-title">Больше поля.<br>Больше игры.<br><span>Больше своих.</span></h1>
+      <h1 id="hero-title">Больше драйва.<br>Больше игры.<br><span>Больше своих.</span></h1>
       <p class="hero-description">3 500 м² под крышей, более 40 укрытий и ваша команда. Играйте в пейнтбол, не подстраивая планы под дождь или время года.</p>
       <div class="hero-buttons">
         <a class="btn btn-primary" href="#prices">Выбрать тариф <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
@@ -473,9 +491,30 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
   </div>
 </section>
 
+<!-- Блок с галереей -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="eyebrow">02 / Галерея</div>
+    <div class="section-head">
+      <h2 class="title">Атмосфера <em>арены</em></h2>
+      <p>Фотографии с прошедших игр, турниров и корпоративов. Посмотрите, как выглядит BLACKSHOT в действии.</p>
+    </div>
+    
+    <div class="gallery-grid">
+      <!-- Для добавления фото просто положите картинки img1.jpg, img2.jpg и т.д. в папку images -->
+      <div class="gallery-item"><img src="images/img1.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/img2.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/img3.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/img4.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/img5.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/img6.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 <section class="section scenarios" id="scenarios">
   <div class="container">
-    <div class="eyebrow">02 / Сценарии</div>
+    <div class="eyebrow">03 / Сценарии</div>
     <div class="section-head">
       <h2 class="title">Варианты <em>игры</em></h2>
       <p>Меняйте правила прямо в процессе. Инструктор предложит разные сценарии, чтобы пейнтбол не надоел даже после нескольких часов.</p>
@@ -507,7 +546,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 
 <section class="section prices" id="prices">
   <div class="container">
-    <div class="eyebrow">03 / Выберите свой запас игры</div>
+    <div class="eyebrow">04 / Выберите свой запас игры</div>
     <div class="section-head">
       <h2 class="title">Два тарифа.<br><em>Экипировка включена.</em></h2>
       <p>Цена указана за одного участника. Длительность зависит от тарифа и количества игроков в компании.</p>
@@ -571,7 +610,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 
 <section class="section" id="offers">
   <div class="container offers-grid">
-    <div class="eyebrow">04 / Праздники и сборные игры</div>
+    <div class="eyebrow">05 / Праздники и сборные игры</div>
     
     <div class="birthday">
       <div class="birthday-content">
@@ -628,7 +667,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 <section class="section faq" id="faq">
   <div class="container faq-layout">
     <div class="faq-copy">
-      <div class="eyebrow">05 / Частые вопросы</div>
+      <div class="eyebrow">06 / Частые вопросы</div>
       <h2 class="title">Понятные условия.<br><em>Хороший план.</em></h2>
       <p>Остались вопросы перед визитом? Здесь мы собрали основные моменты по организации игр.</p>
     </div>
@@ -644,7 +683,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 <section class="section booking" id="booking">
   <div class="container booking-layout">
     <div class="booking-copy">
-      <div class="eyebrow">06 / Соберите свою игру</div>
+      <div class="eyebrow">07 / Соберите свою игру</div>
       <h2 class="title">Твой тариф.<br>Твоя команда.<br>Твой BLACKSHOT.</h2>
       <p>Выберите пакет и количество игроков. Посмотрите базовый расчёт и подготовьте сообщение для официального сообщества клуба.</p>
       <a class="booking-phone" href="tel:+79275541212"><small>Бронь и вопросы по телефону:</small><strong>+7 (927) 554-12-12</strong></a>
@@ -695,7 +734,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 <section class="section" id="contacts">
   <div class="container contacts-layout">
     <div class="contacts-copy">
-      <div class="eyebrow">07 / Встречаемся на арене</div>
+      <div class="eyebrow">08 / Встречаемся на арене</div>
       <h2 class="title">Астрахань.<br><em>Украинская, 3.</em></h2>
       <p class="address">Ул. Украинская, д. 3, лит. Г, 7</p>
       <p class="contacts-description">Крытая пейнтбольная арена со всеми удобствами для игры и отдыха. Перед поездкой позвоните, чтобы уточнить точку входа.</p>
@@ -716,8 +755,12 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 <footer class="footer">
   <div class="container">
     <div class="footer-main">
-      <a class="brand" href="#home" aria-label="BLACKSHOT — наверх"><span class="brand-mark" aria-hidden="true"></span><span><span class="brand-name">BLACKSHOT</span><span class="brand-caption">Пейнтбол · Астрахань</span></span></a>
-      <span class="footer-tagline">Больше поля. Больше игры.</span>
+      <a class="brand" href="#home" aria-label="BLACKSHOT — наверх">
+        <img class="brand-logo" src="images/logo.png" alt="BLACKSHOT" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="brand-mark" style="display: none;" aria-hidden="true"></span>
+        <span><span class="brand-name">BLACKSHOT</span><span class="brand-caption">Пейнтбол · Астрахань</span></span>
+      </a>
+      <span class="footer-tagline">Больше драйва. Больше игры.</span>
       <a class="text-link" href="tel:+79275541212">Позвонить в клуб <svg class="icon" aria-hidden="true"><use href="#phone"/></svg></a>
     </div>
     <div class="footer-bottom">
