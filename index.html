@@ -244,6 +244,7 @@ details p{font-size:12px;line-height:1.95;color:var(--muted);padding:0 25px 23px
 .estimate-top span{font-size:11px;color:var(--muted)}
 .estimate-top strong{font:500 34px/1.1 var(--head);color:var(--primary);text-align:right}
 .estimate p{font-size:10px;line-height:1.9;color:var(--muted);margin-top:11px}
+.estimate-formula{font-size:15px;font-weight:700;color:var(--text);margin-top:12px;letter-spacing:.02em}
 .booking-form>.btn{width:100%;justify-content:space-between;margin-top:22px}
 .form-note{font-size:9px;line-height:1.9;color:var(--muted);margin-top:13px}
 
@@ -340,7 +341,7 @@ html{scroll-padding-top:88px}.container{width:calc(100% - 36px)}.section{padding
 .booking-form{padding:25px 21px;box-shadow:7px 7px 0 #00000040}.form-grid{grid-template-columns:1fr 1fr;gap:18px 11px}
 .field input,.field select,.field textarea{font-size:16px;padding-inline:10px}.form-top h3{font-size:24px}.estimate-top strong{font-size:30px}
 .contacts-layout{grid-template-columns:1fr;gap:29px}.address{font-size:16px}.contact-panel{padding:26px}
-.footer{padding-bottom:105px}.footer-main{flex-wrap:wrap;gap:22px}.footer-tagline{display:none}.footer-main .text-link{font-size:10px}.footer-bottom{flex-direction:column;gap:15px}
+.footer{padding-bottom:105px}.footer-main{flex-wrap:wrap;gap:22px}.footer-tagline{display,none}.footer-main .text-link{font-size:10px}.footer-bottom{flex-direction:column;gap:15px}
 .mobile-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;position:fixed;z-index:25;bottom:0;left:0;right:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:#0d0e0cf5;backdrop-filter:blur(12px);border-top:1px solid var(--line)}
 .mobile-cta strong{display:block;font-size:11px}.mobile-cta span{display:block;font-size:9px;color:var(--muted);margin-top:5px}.mobile-cta .btn{min-height:42px;padding:11px 17px;font-size:10px}
 body:has(dialog[open]) .mobile-cta{visibility:hidden}
@@ -360,7 +361,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
   <symbol id="arrow-up" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
   <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 1v5m0 12v5M1 12h5m12 0h5"/></symbol>
   <symbol id="shield" viewBox="0 0 24 24"><path d="m12 2 8 3v6c0 5-8 11-8 11S4 16 4 11V5l8-3Z"/><path d="m8 11 3 3 5-6"/></symbol>
-  <symbol id="roof" viewBox="0 0 24 24"><path d="m2 10 10-7 10 7M5 9v12h14V9M9 21v-7h6v7"/></symbol>
+  <symbol id="roof" viewBox="0 0 24 24"><path d="m2 10 10-7 10 7M5 9v12h14V9M9 21-7h6v7"/></symbol>
   <symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 5v2"/></symbol>
@@ -375,7 +376,6 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="#home" aria-label="BLACKSHOT — на главную">
-      <!-- Если картинка logo.png не загрузится, она скроется, и появится старый значок brand-mark -->
       <img class="brand-logo" src="images/logo.png" alt="BLACKSHOT" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
       <span class="brand-mark" style="display: none;" aria-hidden="true"></span>
       <span><span class="brand-name">BLACKSHOT</span><span class="brand-caption">Пейнтбол · Астрахань</span></span>
@@ -501,7 +501,6 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
     </div>
     
     <div class="gallery-grid">
-      <!-- Для добавления фото просто положите картинки img1.jpg, img2.jpg и т.д. в папку images -->
       <div class="gallery-item"><img src="images/img1.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
       <div class="gallery-item"><img src="images/img2.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
       <div class="gallery-item"><img src="images/img3.jpg" alt="Фото игры BLACKSHOT" loading="lazy"></div>
@@ -638,7 +637,10 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
         <svg class="icon" aria-hidden="true"><use href="#people"/></svg>
         <div><h3>Нет команды? Есть сборные игры.</h3><p>BLACKSHOT периодически проводит игры, на которые можно записаться одному или вдвоём. Ближайшую дату и наличие мест уточняйте в наших соцсетях.</p></div>
       </div>
-      <a class="btn btn-outline" href="https://vk.ru/blackshot_astrakhan" target="_blank" rel="noopener noreferrer">Узнать о сборной игре <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
+      <div style="display:flex; gap:11px; flex-wrap:wrap; flex-shrink:0">
+        <a class="btn btn-outline" href="https://wa.me/79275541212" target="_blank" rel="noopener noreferrer">Уточнить в WhatsApp <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
+        <a class="btn btn-outline" href="https://vk.com/blackshot_astrakhan" target="_blank" rel="noopener noreferrer">Написать в Макс <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
@@ -720,8 +722,9 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 
       <div class="estimate" role="status" aria-live="polite" aria-atomic="true">
         <div class="estimate-top"><span>Базовый расчёт</span><strong id="estimate-price">13 000 ₽</strong></div>
-        <p id="estimate-description">10 игроков × 1 300 ₽. По тарифу — 1 час игры, 200 шаров каждому.</p>
-        <p>Дополнительный арсенал и скидка именинника не учтены в авто-расчёте. Итоговую цену подтверждает администратор.</p>
+        <p id="estimate-formula" class="estimate-formula">10 чел × 1 300 ₽</p>
+        <p id="estimate-description">По тарифу «Стандартный» — 1 час игры, 200 шаров каждому.</p>
+        <p>Дополнительный арсенал и скидка именинника не учтены. Итоговую цену подтверждает администратор.</p>
       </div>
 
       <button class="btn btn-primary" type="submit">Подготовить сообщение <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></button>
@@ -741,7 +744,8 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
       <a class="contact-phone" href="tel:+79275541212">+7 (927) 554-12-12</a>
       <div class="contact-buttons">
         <a class="btn btn-primary" href="https://yandex.ru/maps/org/blekshot/105654279904/" target="_blank" rel="noopener noreferrer">Открыть на карте <svg class="icon" aria-hidden="true"><use href="#pin"/></svg></a>
-        <a class="btn btn-outline" href="https://vk.ru/blackshot_astrakhan" target="_blank" rel="noopener noreferrer">Написать в VK <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
+        <a class="btn btn-primary" href="https://wa.me/79275541212" target="_blank" rel="noopener noreferrer">WhatsApp <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
+        <a class="btn btn-outline" href="https://web.max.ru/120590777" target="_blank" rel="noopener noreferrer">Макс <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
       </div>
     </div>
     <div class="contact-panel">
@@ -783,7 +787,8 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
   <textarea class="request-text" id="request-text" readonly spellcheck="false"></textarea>
   <div class="dialog-actions">
     <button class="btn btn-primary" type="button" id="copy-request"><svg class="icon" aria-hidden="true"><use href="#copy"/></svg><span>Скопировать текст</span></button>
-    <a class="btn btn-outline" href="https://vk.ru/blackshot_astrakhan" target="_blank" rel="noopener noreferrer">Открыть VK <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
+    <a class="btn btn-outline" href="https://wa.me/79275541212" target="_blank" rel="noopener noreferrer">WhatsApp <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
+    <a class="btn btn-outline" href="https://vk.com/blackshot_astrakhan" target="_blank" rel="noopener noreferrer">Макс (VK) <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
   </div>
   <p class="copy-status" id="copy-status" role="status"></p>
 </dialog>
@@ -888,6 +893,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
       return {
         valid: false,
         priceText: "—",
+        formulaText: "",
         description: "Укажите целое количество игроков, не меньше одного."
       };
     }
@@ -903,15 +909,15 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
       total,
       timeText,
       priceText: money.format(total),
-      description:
-        `${count} игроков × ${money.format(selected.price)}. ` +
-        `По тарифу — ${timeText} игры, ${selected.balls} шаров каждому.`
+      formulaText: `${count} чел × ${money.format(selected.price)}`,
+      description: `По тарифу «${selected.title}» — ${timeText} игры, ${selected.balls} шаров каждому.`
     };
   }
 
   function updateEstimate() {
     const result = calculate();
     $("#estimate-price").textContent = result.priceText;
+    $("#estimate-formula").textContent = result.formulaText;
     $("#estimate-description").textContent = result.description;
   }
 
@@ -994,7 +1000,8 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
       `Тариф: ${selected.title}`,
       `Количество игроков: ${count}`,
       `Желаемая дата: ${formattedDate}`,
-      `Ориентир по базе: ${estimate.priceText} (${estimate.description})`,
+      `Расчёт: ${estimate.formulaText} = ${estimate.priceText}`,
+      `Время и шары: ${estimate.timeText} игры, ${selected.balls} шаров каждому`,
     ];
 
     if (wishes.value.trim()) {
@@ -1026,7 +1033,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
       if (!navigator.clipboard || !window.isSecureContext) throw new Error("Clipboard unavailable");
       await navigator.clipboard.writeText(requestText.value);
       copyButton.querySelector("span").textContent = "Текст скопирован";
-      copyStatus.textContent = "Перейдите в ВКонтакте и вставьте текст в сообщения группы.";
+      copyStatus.textContent = "Перейдите в мессенджер и вставьте текст в сообщения группы.";
     } catch {
       requestText.focus();
       requestText.select();
