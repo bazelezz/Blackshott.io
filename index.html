@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -136,6 +137,24 @@ button,a{-webkit-tap-highlight-color:transparent}
 .gallery-item img{width:100%;height:100%;object-fit:cover;opacity:0.85;transition:transform 0.5s ease, opacity 0.4s ease}
 .gallery-item:hover img{transform:scale(1.05);opacity:1}
 
+/* Team */
+.team{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 10%,#27301c55,transparent 40%),var(--paper);border-block:1px solid var(--line)}
+.team::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#6b7d410a 1px,transparent 1px),linear-gradient(90deg,#6b7d410a 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.team .container{position:relative}
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.team-card{position:relative;min-width:0;background:var(--panel);border:1px solid var(--line);transition:transform .25s ease,border-color .25s ease}
+.team-card:hover{transform:translateY(-5px);border-color:var(--primary)}
+.team-photo{position:relative;aspect-ratio:1/1;overflow:hidden;background:#11130f}
+.team-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0d0e0c88,transparent 30%,transparent 65%,#0d0e0c66);pointer-events:none}
+.team-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.team-card:hover .team-photo img{transform:scale(1.045)}
+.team-number,.team-role{position:absolute;z-index:1;top:19px;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.team-number{left:20px;color:var(--text)}
+.team-role{right:20px;padding:8px 10px;color:#fff;background:#131611c9;border:1px solid #ffffff30}
+.team-card-body{min-height:180px;padding:24px 25px 29px;border-top:3px solid var(--primary)}
+.team-card h3{font:500 33px/1.1 var(--head);text-transform:uppercase;letter-spacing:.01em}
+.team-card p{max-width:34ch;margin-top:12px;color:var(--muted);font-size:12px;line-height:1.85}
+
 /* Scenarios */
 .scenarios{padding-top:0}
 .scenarios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:40px}
@@ -216,6 +235,18 @@ summary::after{content:"+";position:absolute;right:4px;top:20px;font-size:24px;f
 details[open] summary::after{content:"−"}
 details p{font-size:12px;line-height:1.95;color:var(--muted);padding:0 25px 23px 0}
 
+/* Reviews */
+.reviews{padding-top:0}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.review-card{position:relative;display:flex;flex-direction:column;padding:28px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--primary)}
+.review-rating{font-size:15px;letter-spacing:.18em;color:var(--primary);line-height:1}
+.review-text{font-size:12px;line-height:1.95;color:var(--text);margin-top:18px;flex-grow:1}
+.review-author{display:flex;align-items:center;gap:13px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.review-avatar{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:38px;height:38px;background:var(--primary);color:var(--ink);font:600 17px var(--head);border-radius:50%}
+.review-author strong{display:block;font-size:12px}
+.review-author small{display:block;font-size:9px;color:var(--muted);margin-top:4px}
+.reviews-cta{display:flex;justify-content:center;margin-top:34px}
+
 /* Contacts */
 .contacts-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px}
 .contacts-copy .title{margin-top:24px}
@@ -242,6 +273,7 @@ details p{font-size:12px;line-height:1.95;color:var(--muted);padding:0 25px 23px
 
 @media(max-width:1100px){
 .container{width:calc(100% - 48px)}.header-phone{display:none}.nav{gap:22px}
+.nav{gap:16px}.nav a{font-size:10px}
 .hero-content{width:72%}.hero-art{width:410px;right:-60px;top:170px;opacity:.9}.hero h1{font-size:8.3vw}
 .arena-layout,.faq-layout{gap:42px}
 }
@@ -259,6 +291,7 @@ details p{font-size:12px;line-height:1.95;color:var(--muted);padding:0 25px 23px
 .section{padding-block:74px}.section-head>p{max-width:280px;font-size:12px}
 .arena-layout{gap:32px}.arena-map{padding:22px}
 .gallery-grid{grid-template-columns:repeat(2,1fr);gap:15px}
+.team-grid{gap:14px}.team-card-body{padding:21px;min-height:208px}.team-card h3{font-size:29px}
 .scenarios-grid{grid-template-columns:1fr 1fr}
 .package{padding:27px}.package-price{font-size:49px}
 .equipment{grid-template-columns:1fr 1fr}
@@ -267,6 +300,7 @@ details p{font-size:12px;line-height:1.95;color:var(--muted);padding:0 25px 23px
 .open-game{align-items:flex-start;flex-direction:column;gap:21px}
 .rules-list{grid-template-columns:1fr}
 .faq-layout{gap:32px}
+.reviews-grid{grid-template-columns:1fr 1fr}
 .contacts-layout{gap:32px}.footer-tagline{font-size:18px}
 }
 @media(max-width:600px){
@@ -286,6 +320,7 @@ html{scroll-padding-top:88px}.container{width:calc(100% - 36px)}.section{padding
 .ticker-inner{justify-content:flex-start;padding-block:12px;font-size:14px;gap:23px}
 .arena-layout{grid-template-columns:1fr;gap:30px}.arena-copy>p{font-size:12px}.arena-map{padding:24px}
 .gallery-grid{grid-template-columns:1fr;gap:12px}
+.team-grid{grid-template-columns:1fr;gap:18px}.team-photo{aspect-ratio:5/4}.team-card-body{min-height:0;padding:22px 23px 26px}.team-card p{max-width:none}
 .scenarios-grid{grid-template-columns:1fr}
 .packages{grid-template-columns:1fr;gap:17px}.package{padding:27px}.package h3{font-size:37px}.package-price{font-size:52px}
 .equipment{gap:18px 12px}.equipment div{font-size:10px;gap:9px}
@@ -294,6 +329,7 @@ html{scroll-padding-top:88px}.container{width:calc(100% - 36px)}.section{padding
 .open-game{padding:25px}.open-game h3{font-size:26px}.open-game-copy{gap:13px}.open-game .btn{width:100%}
 .rules-container{padding:25px}
 .faq-layout{grid-template-columns:1fr;gap:28px}.faq-copy>p{max-width:100%;margin-top:19px}
+.reviews-grid{grid-template-columns:1fr}
 .contacts-layout{grid-template-columns:1fr;gap:29px}.address{font-size:16px}.contact-panel{padding:26px}
 .footer{padding-bottom:25px}.footer-main{flex-wrap:wrap;gap:22px}.footer-tagline{display:none}.footer-main .text-link{font-size:10px}.footer-bottom{flex-direction:column;gap:15px}
 }
@@ -334,9 +370,11 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
     <nav class="nav" id="navigation" aria-label="Главная навигация">
       <a href="#arena">Арена</a>
       <a href="#gallery">Галерея</a>
+      <a href="#team">Команда</a>
       <a href="#prices">Тарифы</a>
       <a href="#offers">Праздники</a>
       <a href="#rules">Правила</a>
+      <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
     </nav>
     <div class="header-actions">
@@ -465,9 +503,51 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
   </div>
 </section>
 
+<section class="section team" id="team" aria-labelledby="team-title">
+  <div class="container">
+    <div class="eyebrow">03 / Наши инструкторы</div>
+    <div class="section-head">
+      <h2 class="title" id="team-title">Знакомьтесь, <em>команда</em></h2>
+      <p>Они встретят вас на арене, объяснят правила и помогут получить максимум от игры.</p>
+    </div>
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="team-photo">
+          <img src="images/per1.png" alt="Максим — инструктор BLACKSHOT" loading="lazy" width="1254" height="1254">
+          <span class="team-number">01 / 03</span><span class="team-role">Инструктор</span>
+        </div>
+        <div class="team-card-body">
+          <h3>Максим</h3>
+          <p>Зарядит энергией, поможет освоиться на поле и сделает игру незабываемой! 🎯🔥</p>
+        </div>
+      </article>
+      <article class="team-card">
+        <div class="team-photo">
+          <img src="images/per2.png" alt="Шамиль — инструктор BLACKSHOT" loading="lazy" width="1254" height="1254">
+          <span class="team-number">02 / 03</span><span class="team-role">Инструктор</span>
+        </div>
+        <div class="team-card-body">
+          <h3>Шамиль</h3>
+          <p>Студент медицинского университета, всегда готов помочь и позаботиться о вашей безопасности на игре. 🎯🩺</p>
+        </div>
+      </article>
+      <article class="team-card">
+        <div class="team-photo">
+          <img src="images/per3.png" alt="Артём — инструктор BLACKSHOT" loading="lazy" width="1254" height="1254">
+          <span class="team-number">03 / 03</span><span class="team-role">Инструктор</span>
+        </div>
+        <div class="team-card-body">
+          <h3>Артём</h3>
+          <p>Поможет освоиться на поле, подскажет тактику и сделает игру яркой и безопасной. 🎯</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section scenarios" id="scenarios">
   <div class="container">
-    <div class="eyebrow">03 / Сценарии</div>
+    <div class="eyebrow">04 / Сценарии</div>
     <div class="section-head">
       <h2 class="title">Варианты <em>игры</em></h2>
       <p>Меняйте правила прямо в процессе. Инструктор предложит разные сценарии, чтобы пейнтбол не надоел даже после нескольких часов.</p>
@@ -499,7 +579,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 
 <section class="section prices" id="prices">
   <div class="container">
-    <div class="eyebrow">04 / Выберите свой запас игры</div>
+    <div class="eyebrow">05 / Выберите свой запас игры</div>
     <div class="section-head">
       <h2 class="title">Два тарифа.<br><em>Экипировка включена.</em></h2>
       <p>Цена указана за одного участника. Длительность зависит от тарифа и количества игроков в компании.</p>
@@ -563,7 +643,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 
 <section class="section" id="offers">
   <div class="container offers-grid">
-    <div class="eyebrow">05 / Праздники и сборные игры</div>
+    <div class="eyebrow">06 / Праздники и сборные игры</div>
     
     <div class="birthday">
       <div class="birthday-content">
@@ -623,7 +703,7 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 <section class="section faq" id="faq">
   <div class="container faq-layout">
     <div class="faq-copy">
-      <div class="eyebrow">06 / Частые вопросы</div>
+      <div class="eyebrow">07 / Частые вопросы</div>
       <h2 class="title">Понятные условия.<br><em>Хороший план.</em></h2>
       <p>Остались вопросы перед визитом? Здесь мы собрали основные моменты по организации игр.</p>
     </div>
@@ -636,10 +716,61 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
   </div>
 </section>
 
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="eyebrow">08 / Отзывы гостей</div>
+    <div class="section-head">
+      <h2 class="title">Что говорят <em>о нас</em></h2>
+      <p>Реальные отзывы гостей BLACKSHOT с 2ГИС. Спасибо каждому, кто делится впечатлениями после игры.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review-card">
+        <div class="review-rating" aria-label="Оценка 5 из 5">
+          <span aria-hidden="true">★★★★★</span>
+        </div>
+        <p class="review-text">«Отличное место для отдыха большой командой. Хорошее место, чтобы получить массу позитивных эмоций, выплеснуть всю агрессию, накипевшую за рабочий день».</p>
+        <footer class="review-author">
+          <span class="review-avatar" aria-hidden="true">А</span>
+          <span><strong>Алексей</strong><small>2ГИС · отзыв гостя</small></span>
+        </footer>
+      </article>
+
+      <article class="review-card">
+        <div class="review-rating" aria-label="Оценка 5 из 5">
+          <span aria-hidden="true">★★★★★</span>
+        </div>
+        <p class="review-text">«Хочу поделиться своим опытом использования BLACKSHOT. Искал долго, выбирал между несколькими компаниями, но остановился на этой, так как привлекли подробные описания и положительные отзывы (и, как оказалось, не зря!)».</p>
+        <footer class="review-author">
+          <span class="review-avatar" aria-hidden="true">Д</span>
+          <span><strong>Дмитрий</strong><small>2ГИС · отзыв гостя</small></span>
+        </footer>
+      </article>
+
+      <article class="review-card">
+        <div class="review-rating" aria-label="Оценка 5 из 5">
+          <span aria-hidden="true">★★★★★</span>
+        </div>
+        <p class="review-text">«Были тут на день рождения друга. Отличный персонал, подробный инструктаж, классная игра. Спасибо за проведённое время, очень понравилось».</p>
+        <footer class="review-author">
+          <span class="review-avatar" aria-hidden="true">М</span>
+          <span><strong>Мария</strong><small>2ГИС · отзыв гостя</small></span>
+        </footer>
+      </article>
+    </div>
+
+    <div class="reviews-cta">
+      <a class="btn btn-outline" href="https://yandex.ru/maps/org/blekshot/105654279904/" target="_blank" rel="noopener noreferrer">
+        Все отзывы на 2ГИС <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="contacts">
   <div class="container contacts-layout">
     <div class="contacts-copy">
-      <div class="eyebrow">07 / Встречаемся на арене</div>
+      <div class="eyebrow">09 / Встречаемся на арене</div>
       <h2 class="title">Астрахань.<br><em>Украинская, 3.</em></h2>
       <p class="address">Ул. Украинская, д. 3, лит. Г, 7</p>
       <p class="contacts-description">Крытая пейнтбольная арена со всеми удобствами для игры и отдыха. Перед поездкой позвоните, чтобы уточнить точку входа.</p>
@@ -719,3 +850,4 @@ html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animati
 </script>
 </body>
 </html>
+```
